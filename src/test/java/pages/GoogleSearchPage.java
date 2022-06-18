@@ -12,4 +12,7 @@ public class GoogleSearchPage {
 
     @FindBy(name = "q")
     public WebElement searchInputBox;
+
+    @FindBy(id = "result-stats")
+    public WebElement resultBar;
 }

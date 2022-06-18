@@ -38,4 +38,10 @@ public class GoogleSteps {
         Assert.assertTrue(driver.getTitle().contains(key));
     }
 
+    @Then("user should see results are more than {long}")
+    public void userShouldSeeResultsAreMoreThan(long result) {
+        Assert.assertTrue(Long.parseLong(googleSearchPage.resultBar.getText().split(" ")[1].replace(",", "")) > result); // 10950000000
+    }
+
+
 }
