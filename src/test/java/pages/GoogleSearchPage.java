@@ -15,4 +15,6 @@ public class GoogleSearchPage {
 
     @FindBy(id = "result-stats")
     public WebElement resultBar;
+
+
 }
