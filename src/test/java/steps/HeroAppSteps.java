@@ -31,9 +31,21 @@ public class HeroAppSteps {
 
     @Then("user should see {string} heading")
     public void userShouldSeeHeading(String headingText) {
-        Assert.assertTrue(heroAppPage.addRemoveHeading3.isDisplayed());
-        Assert.assertEquals(headingText, heroAppPage.addRemoveHeading3.getText());
+        switch (headingText) {
+            case "Add/Remove Elements":
+                Assert.assertTrue(heroAppPage.addRemoveHeading3.isDisplayed());
+                Assert.assertEquals(headingText, heroAppPage.addRemoveHeading3.getText());
+                break;
+
+        case "Context Menu":
+        Assert.assertTrue(heroAppPage.contextMenuHeading3.isDisplayed());
+        Assert.assertEquals(headingText, heroAppPage.contextMenuHeading3.getText());
+        break;
+        default:
+        throw new NotFoundException("The heading text is invalid!!!");
     }
+
+}
 
     @And("user should see {string} button")
     public void userShouldSeeButton(String buttonText) {
@@ -82,4 +94,36 @@ public class HeroAppSteps {
                 throw new NotFoundException("The button text is not defined properly in the feature file!!!");
         }
     }
+
+    /*  Scenario: Validate context menu page
+    Given user navigates to "http://the-internet.herokuapp.com/"
+    When user clicks on "Context Menu" link
+    Then user should see "Context Menu" heading
+    And user should see "Context menu items are custom additions that appear in the right-click menu." text
+    And user should see "Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert." text
+    And user should see a rectangle box to right click
+    When user right clicks on rectangle box
+    Then user should see a popup displaying message "You selected a context menu"*/
+
+    @And("user should see {string} text")
+    public void userShouldSeeText(String paragraphText) {
+    }
+
+    @And("user should see a rectangle box to right click")
+    public void userShouldSeeARectangleBoxToRightClick() {
+    }
+
+    @When("user right clicks on rectangle box")
+    public void userRightClicksOnRectangleBox() {
+        heroAppPage.rectangleBox.click();
+    }
+
+    @Then("user should see a popup displaying message {string}")
+    public void userShouldSeeAPopupDisplayingMessage(String messageText) {
+        Assert.assertTrue(heroAppPage.rectangleBox.isDisplayed());
+    }
+
+
+
+
 }

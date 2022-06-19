@@ -24,6 +24,18 @@ public class HeroAppPage {
     @FindBy(css = "#elements>button")
     public WebElement deleteElementButton;
 
+    @FindBy(css = ".example>h3")
+    public WebElement contextMenuHeading3;
+
+    @FindBy(css = ".example>p:nth-child(2)")
+    public WebElement contextMenuParagraph1;
+
+    @FindBy(css = ".example>p:nth-child(3)")
+    public WebElement contextMenuParagraph2;
+
+    @FindBy(id = "hot-spot")
+    public WebElement rectangleBox;
+
     public void clickOnCategoryLink(String linkText){
         for(WebElement link : categoryLinks){
             if(link.getText().equals(linkText)){
