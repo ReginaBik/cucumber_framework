@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@Regression"
+        tags = "@regression",
+        dryRun = false,
+        monochrome = false
 )
 
 public class Runner {
-
-
 }
