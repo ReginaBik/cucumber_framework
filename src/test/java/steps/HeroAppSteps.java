@@ -138,7 +138,7 @@ public class HeroAppSteps {
         heroAppPage.usernameField.sendKeys(username);
         Assert.assertTrue(heroAppPage.passwordField.isDisplayed());
         heroAppPage.passwordField.sendKeys(password);
-  }
+    }
 
     @Then("user should see a message starts with {string}")
     public void userShouldSeeAMessageStartsWith(String message) {
