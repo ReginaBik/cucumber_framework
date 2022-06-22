@@ -1,4 +1,4 @@
-@Google
+@Regression
   #Each feature file must have a Feature name
   #To declare all scenarios in the feature file with a tag, we can put tag on the top of Feature
 Feature: Google Search Functionality

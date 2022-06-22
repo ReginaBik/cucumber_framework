@@ -1,7 +1,6 @@
-
+@Regression
 Feature: Wiki Search Functionality
 
-  @Wiki
   Scenario Outline: Validate Wiki search
     Given user navigates to "https://www.wikipedia.org/"
     When user searches for "<key>" on Wikipedia

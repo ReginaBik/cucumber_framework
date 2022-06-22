@@ -1,4 +1,4 @@
-@Regression @HeroApp
+@Regression
 
 Feature: HeroApp Functionalities
 
