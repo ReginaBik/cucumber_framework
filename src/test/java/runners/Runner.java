@@ -12,7 +12,10 @@ import org.junit.runner.RunWith;
         tags = "@Google", // this is like groups/suite; if left "" then it'll run ALL feature files scenarios
         dryRun = false, // used to compile cucumber features files and step definitions; shows any missing steps/implementation
         monochrome = false, // used to make the Cucumber test console output more readable
-        plugin = "html:target/cucumber-reports"
+        plugin = {"html:target/cucumber-reports",
+                "json:target/cucumber-reports/Cucumber.json",
+                "pretty"
+        }
 )
 
 public class Runner {
