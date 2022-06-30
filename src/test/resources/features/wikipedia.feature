@@ -15,9 +15,8 @@ Feature: Wiki Search Functionality
       | Post Malone      |
       | Jack Harlow      |
       | Lil Baby         |
-     #| bob the builder  |
-     #| Jennifer Lopez   |
-     #| Robert downey jr |
-     #| Irina Shayk      |
-     #| Kobe Bryant      |
-     #| Piero Manzoni    |
+
+  Scenario: Validate Wikipedia main languages
+    Given user navigates to "https://www.wikipedia.org/"
+    Then user should see below languages around the logo
+      | English | 日本語 | Español | Русский | Deutsch | Français | Italiano | 中文 | Português | Polski |

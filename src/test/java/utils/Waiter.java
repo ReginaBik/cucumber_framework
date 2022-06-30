@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class Waiter {
     public static void pause(int seconds){
         try {
@@ -25,6 +27,10 @@ public class Waiter {
 
     public static void waitUntilTextToBePresentInElement(WebDriver driver, int seconds, WebElement element, String text){
         new WebDriverWait(driver, seconds).until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    public static void waitUntilPageIsLoaded(WebDriver driver, int seconds){
+        driver.manage().timeouts().pageLoadTimeout(seconds, TimeUnit.SECONDS);
     }
 
 
